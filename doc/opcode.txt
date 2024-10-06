@@ -1,0 +1,7 @@
+
+                             Table 3-2 Data-processing instructions
+-------------------------------------------------------------------
+Opcode   Mnemonic   Operation          Action
+-------------------------------------------------------------------
+0000     AND        Logical AND       Rd := Rn AND shifter_operand
+0001     EOR        
