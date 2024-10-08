@@ -1,3 +1,4 @@
+Version 0.0.1
 ```
  __     ______     __    __     __  __    
 /\ \   /\  == \   /\ "-./  \   /\_\_\_\   
@@ -8,7 +9,7 @@
 <h2>Description </h2>
 
 `irmx` is a set of console programs. It is also similar to the 
-QEMU emulation program. The program is currently under 
+QEMU emulation program. The program has its own settings that can be changed. It is currently under 
 development. Inside it includes the following routines:
 
 - Disassembly
@@ -22,23 +23,13 @@ development. Inside it includes the following routines:
 ```bash
 $ git clone https://github.com/orca-li/irmx.git
 $ make
-$ ./dbg/irmx
-ARM Instruction Set Format
-Type     Immediate
-Hex      e3a00003
-
-COND NN I OPCD S REGN REGD RTAT IMMEDIAT
-1110 00 1 1101 0 0000 0000 0000 00000011 
-
-COND      1110        
-NONAME    00          
-TYPE      1           
-OPCODE    1101         MOV
-S         0           
-REGN      0000        
-REGD      0000        
-ROTATE    0000        
-IMMEDIATE 00000011    
-
-mov r0, #3
+$ ./dbg/irmx -dt # architecture tests
+$ ./dbg/irmx -d <filename> # arm test
+$ ./dbg/irmx -d <filename> --set-arch="test-big64"
+Architecture       test-big64
+Capacity           64
+Bytes read         8
+Type-endian        big-endian
+Input              fe1234eaa0e01221
+Endian             2112e0a0ea3412fe
 ```

@@ -1,3 +1,4 @@
+#if 0
 #include <parser.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -205,3 +206,4 @@ isfdump(bitstr_t bits)
         print_inst(inst.opcode, inst.rotate, inst.imm);
     }
 }
+#endif

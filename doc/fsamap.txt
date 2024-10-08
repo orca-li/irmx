@@ -1,0 +1,122 @@
+File Section Architecture Map(FSA Map)
+
++------------------------+
+|                        |
++------------------------+
+
+static void
+function_name(void)
+{
+    /* POINTERS CHECK SECTION BEGIN */
+    /* POINTERS CHECK SECTION END */
+
+    /* CONFIGURATION SECTION BEGIN */
+    /* CONFIGURATION SECTION END */
+
+    /* INITIALIZATION SECTION BEGIN */
+    /* INITIALIZATION SECTION END */
+
+    /* CODE SECTION BEGIN */
+    /* CODE SECTION END */
+
+    /* MEMORY RELEASE SECTION BEGIN */
+    /* MEMORY RELEASE SECTION END */
+
+    /* RETURN SECTION BEGIN */
+    /* RETURN SECTION END */
+}
+
+SYMBOLS   TYPE     PURPOSE
+=============================================
+_cnfg
+_func
+_init
+_code
+_ret
+
+_func
++------------------------+
+|         _cptr          | check pointers
++------------------------+
+|         _cnfg          | setup config
++------------------------+
+|         _init          | init variables
++------------------------+
+             +            
++------------------------+
+|          code          |
++------------------------+
+             +            
++------------------------+
+|         _free          | free memory
++------------------------+
+|          _ret          |
++------------------------+
+
+_same(brief)
++------------------------+ -----+
+|         protect        |      | HEADER
++------------------------+      |
+             +                  |
++------------------------+ --+  |
+|        includes        |   |  |
++------------------------+   |  |
+|         macros         |   |  |
++------------------------+   |  | GENERAL 
+|          types         |   |  |
++------------------------+   |  |
+|         extinit        |   |  |
++------------------------+ --+--+
+             +               |
++------------------------+   | 
+|           code         |   | SOURCE
++------------------------+ --+
+
+_same
++------------------------+---includes
+|         _incc          | #include stdlbis C
+|         _incl          | #include libs
++------------------------+---macros
+|         _defc          | #defines CONSTS
+|         _deft          | #defines TOKENS
+|         _deff          | #defines MACRO_FUNCTIONS
++------------------------+--- types
+|         _enum          | enums
+|         _typs          | typedef
+|         _strx          | structs
++------------------------+--- extern/init data
+|         _funp          | func prototypes
+|         _extt          | extern/init typedef
+|         _exts          | extern/init structs
+|         _extv          | extern/init variables
++------------------------+---code
+|         _subs          | subsections
++------------------------+
+
+main.c/_main;
++------------------------+
+|         _init          |
++------------------------+
+|         _optl          | options
++------------------------+
+|         _optp          | options parsing
++------------------------+
+|         _setf          | set flags
++------------------------+
+|         _pckc          | packets calls
++------------------------+
+
+disasm.c
++------------------------+
+|         _same          |
++------------------------+
+|         _init          | 
++------------------------+
+|         _mmem          | memory manager
++------------------------+--- internal tests
+|         _tmemr         |
+|         _test          | 
+|         _tmain         |
++------------------------+--- extern main
+|         _main          | 
++------------------------+

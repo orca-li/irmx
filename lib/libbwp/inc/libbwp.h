@@ -8,7 +8,8 @@ typedef uint16_t bitstr16_t;
 typedef uint32_t bitstr32_t;
 typedef uint64_t bitstr64_t;
 
-typedef bitstr32_t bitstr_t;
+typedef bitstr64_t bitstr_t;
+typedef bitstr64_t bitstrl_t;
 
 #define __BWP_BITSIZEOF_BYTE 8u
 #define bitsizeof(_type) (sizeof(_type) * __BWP_BITSIZEOF_BYTE)
